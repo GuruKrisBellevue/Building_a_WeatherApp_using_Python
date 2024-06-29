@@ -1,0 +1,142 @@
+/* Styling for the Body section */
+body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', Arial, sans-serif;
+    background-image: url("/static/default.jpg");
+    /*background-size: cover;*/
+    color: black;
+    object-fit: contain;
+
+}
+
+/* Styling for the class named header */
+.header {
+  background-color: lightcoral;
+  text-align: center;
+  padding: 30px;
+  flex:auto;
+}
+
+/* Styling for the class named content-section */
+.content-section{
+  text-align: center;
+  width: 2000px;
+  height: 500px;
+  margin: auto;
+  padding-top: 50px;
+  }
+/* Styling for the unordered list within the class named nav */
+.nav ul {
+    margin: 0;
+}
+
+/* Styling for the list items within the class named nav */
+.nav li {
+    display: inline;
+}
+
+/* Styling for the anchor tag within the class named nav */
+.nav a {
+    display: inline-block;
+    padding: .5em;
+    color: white;
+    font-size: 20px;
+}
+
+/* Styling for the hover function of anchor tag within the class named nav */
+.nav a:hover {
+    background-color: rgba(255, 255, 255, .3)
+}
+
+/* Styling for the h1 element within the class named nav */
+.nav h1{
+font: Georgia;
+font-size: 40px;
+
+}
+
+/* Styling for the class named container */
+.container {
+font: Georgia;
+font-size: 25px;
+}
+
+/* Styling for the class named form-control-lg */
+.form-control-lg{
+ width: 25%;
+  height: 20px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 3px;
+  background-color: #f8f8f8;
+  resize: none;
+  }
+
+  /* Styling for the class named fieldset */
+.fieldset{
+  margin-bottom: 10px;
+  }
+
+  /* Styling for the class named inputboxes */
+.inputboxes{
+  margin-bottom: 10px;
+  }
+
+
+/* Styling for the unordered list within class named radio */
+.radio ul{
+  list-style: none;
+}
+
+  /* Styling for the class named btn */
+.btn {
+    color: #016f32;
+    width: 200px;
+    background: goldenrod;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-weight: bold;
+    border: none;
+    border-radius: 2px;
+    margin-bottom: 2px;
+    margin-top: 2px;
+}
+
+  /* Styling for the h1 tag */
+h1{
+  font-size:xx-large;
+}
+
+/* Styling for the class named final_results */
+.final_results{
+  background-image: linear-gradient(
+  -100deg,
+  rgba(255, 20, 0, 0.2),
+  rgba(255, 20, 0, 0.1)
+);
+}
+
+/* Styling for the anchor tag within class named final_results */
+.final_results a{
+  text-align: center;
+  font-size: larger;
+  color:Red;
+}
+
+/* Styling for the unordered list within class named final_results */
+.final_results ul{
+  text-align: center;
+  list-style: none;
+  font-size: larger;
+ }
+
+/* Styling for the  class named danger */
+.danger{
+  color: red;
+  text-align: center;
+}
+
+/* Styling for the class named red_class */
+.red_class {
+  color: Red;
+}

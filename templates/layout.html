@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<! –– This HTML page defines the default layout for the web page. -->
+<! –– This provides reusable functionality––>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <! –– Defining Header and defaulting it to WeatherApp if not provided ––>
+    <title>
+        {% if title %}
+        {{ title }}
+        {% else %}
+        WeatherApp
+        {% endif %}
+    </title>
+    <! –– Adding reference to CSS StyleSheets ––>
+    <link rel="stylesheet" href="/static/styling.css">
+</head>
+<body>
+
+<header class="header">
+    <! –– Navigation toolbar in the Header ––>
+ <nav class="nav">
+     <! –– Displaying navigation options in an unordered list ––>
+            <ul>
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('city_search') }}">Search by City Name</a></li>
+                <li><a href="{{ url_for('zip_search') }}">Search by ZipCode</a></li>
+                <li><a href="{{ url_for('home') }}">Start Over</a></li>
+            </ul>
+            <hr>
+     <! –– Displaying Header for the App ––>
+            <h1>The Weather App</h1>
+        </nav>
+</header>
+
+<! –– Body block begins here. Webpages that uses this template includes code here ––>
+  <div class="container">
+    {% block body %}
+    {% endblock body %}
+      <br>
+  </div>
+
+</body>
+</html>

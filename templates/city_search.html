@@ -1,0 +1,45 @@
+<! –– HTML code for Search using City names. This reuses the layout.html  ––>
+{% extends "layout.html" %}
+<! –– Body block begins here  ––>
+{% block body %}
+<div>
+    <! –– This section is to display the error messages  ––>
+    <div class="danger">
+        {% for field, errors in form.errors.items() %}
+        <small class="form-text text-muted ">
+            {{ ', '.join(errors) }}
+        </small>
+        {% endfor %}
+    </div>
+    <br>
+    <! –– This section is to display the form objects called by Flask application  ––>
+    <form method="POST" action="" class="content-section">
+        {{ form.hidden_tag() }}
+        {{ form.csrf_token }}
+    <fieldset class="fieldset">
+        <h2> Enter a US City and State Name </h2>
+        <! –– This section contains the Text boxes, Radio button, selectors ––>
+        <! –– and submit button  to receive user input ––>
+        <div class="inputboxes">
+            {{form.city_name.label(class="form-control-label")}}
+            {{form.city_name(class=" form-control-lg")}}
+        </div>
+        <div>
+            {{form.state.label(class="form-control") }}
+             {{ form.state(class="form-control") }}
+        </div>
+
+        <br>
+        <div class="radio">
+            {{form.unit.label}}
+            {{form.unit }}
+        </div>
+    </fieldset>
+    <div class="inputboxes">
+        {{ form.submit(class="btn")}}
+    </div>
+
+    </form>
+
+</div>
+{% endblock body %}

@@ -1,0 +1,11 @@
+<! –– HTML code for Home page. This reuses the layout.html  ––>
+{% extends "layout.html" %}
+<! –– Body block begins here  ––>
+{% block body %}
+<div class="content-section">
+    <! –– This section has links that takes to city_search.html and zip_search.html  ––>
+    <h2> Search for the current weather using CityName or ZipCode</h2>
+    <h3>Click <span class="red_class"> <a href="{{ url_for('city_search') }}"> Here</a> </span> if you want to search using City Name</h3>
+    <h3>Click <span> <a href="{{ url_for('zip_search') }}"> Here</a> </span> if you want to search using ZipCode</h3>
+</div>
+{% endblock body %}

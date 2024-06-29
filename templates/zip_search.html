@@ -1,0 +1,39 @@
+<! –– HTML code for Search using Zipcode. This reuses the layout.html  ––>
+{% extends "layout.html" %}
+<! –– Body block begins here  ––>
+{% block body %}
+<div>
+    <! –– This section is to display the error messages  ––>
+    <div class="danger">
+        {% for field, errors in form.errors.items() %}
+        <small class="form-text text-muted ">
+            {{ ', '.join(errors) }}
+        </small>
+        {% endfor %}
+    </div>
+    <br>
+    <! –– This section is to display the form objects called by Flask application  ––>
+    <form method="POST" action="" class="content-section">
+        {{ form.hidden_tag() }}
+        {{ form.csrf_token }}
+    <fieldset class="fieldset">
+        <h2> Enter a US Zipcode </h2>
+        <! –– This section contains the Text boxes, Radio button and ––>
+        <! –– submit button  to receive user input ––>
+        <div class="inputboxes">
+            {{form.zip_code.label(class="form-control-label")}}
+            {{form.zip_code(class="form-control form-control-lg")}}
+        </div>
+
+        <div class="radio">
+            {{form.unit.label}}
+            {{form.unit }}
+        </div>
+    </fieldset>
+    <div class="inputboxes">
+        {{ form.submit(class="btn")}}
+    </div>
+    </form>
+</div>
+
+{% endblock body %}

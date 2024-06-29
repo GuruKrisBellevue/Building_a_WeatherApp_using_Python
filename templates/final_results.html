@@ -1,0 +1,70 @@
+<! –– HTML code to display the final results. This reuses the layout.html  ––>
+{% extends "layout.html" %}
+<! –– Body block begins here  ––>
+{% block body %}
+<div>
+    <div>
+        <! –– This section is to display the error messages  ––>
+        <div class="danger">
+            {{ error_message }}
+            <br>
+            {% if error_message == " " %}
+            {{ index_error_msg }}
+            {% endif %}
+        </div>
+        <div class="final_results">
+            <! –– This section is to display the API responses  ––>
+            <ul>
+           {% for key, value in weather_results.items() %}
+                 <li> <h4>{{ "%50s : %50s" % (key, value) }}</h4></li>
+                <! –– This section will display images based on the weather  ––>
+                {% if key.strip(" ") == "Main Condition" %}
+                    <! –– Clouds image will be displayed if this is invoked ––>
+                    {% if "clouds" in value.lower() %}
+                        <style>
+                        body {background-image: url("/static/cloudy_sky.avif");
+                        background-size: cover;
+                        color: White;
+                        }
+                        </style>
+                    <! –– Rain image will be displayed if this is invoked ––>
+                    {% elif "rain" in value.lower() %}
+                        <style>
+                        body {background-image: url("/static/rain.jpg");
+                        background-size: cover;
+                        color: white;
+                        }
+                        </style>
+                <! –– Snow image will be displayed if this is invoked ––>
+                    {% elif "snow" in value.lower() %}
+                        <style>
+                        body {background-image: url("/static/snow.jpg");
+                        background-size: cover;
+                        color: white;
+                        }
+                        </style>
+                <! –– ClearSky image will be displayed if this is invoked ––>
+                    {% elif "clear" in value.lower() %}
+                        <style>
+                        body {background-image: url("/static/clear_sky.avif");
+                        background-size: cover;
+                        color: Black;
+                        }
+                        </style>
+                <! –– default image will be displayed if this is invoked ––>
+                    {% else %}
+                        <style>
+                        body {background-image: url("/static/default.jpg");
+                        background-size: cover;
+                        }
+                        </style>
+                    {% endif %}
+                {% endif %}
+           {% endfor %}
+            </ul>
+            <! –– This provides link to start another search ––>
+            <a href="{{ url_for('home') }}">Start another Search!</a>
+        </div>
+    </div>
+</div>
+{% endblock body %}
